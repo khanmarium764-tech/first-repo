@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: #0d6efd;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(to right, #0d6efd, #6610f2);
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: #fff;
+      color: #0d6efd;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+
+    /* Features */
+    .features {
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .features h2 {
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .feature-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #f4f4f4;
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    /* CTA */
+    .cta {
+      background: #0d6efd;
+      color: white;
+      padding: 50px 10%;
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>MyBrand</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h2>Build Your Dream Website</h2>
+      <p>Simple, fast, and responsive landing page design</p>
+      <button class="btn">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Our Features</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Fast</h3>
+        <p>Optimized for performance and speed.</p>
+      </div>
+      <div class="feature">
+        <h3>Responsive</h3>
+        <p>Looks great on all devices.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy</h3>
+        <p>Simple and clean design for quick setup.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Start?</h2>
+    <button class="btn">Sign Up Now</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 MyBrand. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
