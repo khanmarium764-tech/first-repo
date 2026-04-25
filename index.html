@@ -1,181 +1,236 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Landing Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Landing Page</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    body {
-      line-height: 1.6;
-      color: #333;
-    }
+body {
+    background: #f5f5f5;
+}
 
-    /* Navbar */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 10%;
-      background: #0d6efd;
-      color: #fff;
-    }
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #3e2723;
+    color: white;
+}
 
-    header h1 {
-      font-size: 24px;
-    }
+nav h1 {
+    font-size: 24px;
+}
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
 
-    /* Hero Section */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px; 
+}
+
+nav ul li {
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+nav ul li:hover {
+    color: #d7ccc8;
+}
+
+
+nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #d7ccc8;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background: #d7ccc8;
+    flex-wrap: wrap;
+}
+
+.text {
+    max-width: 500px;
+}
+
+.text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.text p {
+    margin-bottom: 20px;
+}
+
+.text button {
+    padding: 10px 20px;
+    background: #3e2723;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.heading img {
+    width: 400px;
+    max-width: 100%;
+    transition: 0.4s;
+     border-radius: 10px;
+}
+
+.heading img:hover {
+    transform: scale(1.08);
+}
+.text button {
+    padding: 15px 20px;
+    background: #3e2723;
+    color: white;
+    border: none;
+    cursor: pointer;
+     border-radius: 6px;
+    transition: 0.3s;
+}
+.text button:hover {
+    background: #5d4037;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* menu */
+.menu {
+    padding: 50px;
+    text-align: center;
+}
+
+.menu h2 {
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card p{
+    font-size: 12px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    height: 100px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: #3e2723;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
     .hero {
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(to right, #0d6efd, #6610f2);
-      color: white;
-      padding: 20px;
+        flex-direction: column;
+        text-align: center;
     }
 
-    .hero h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
+    nav {
+        flex-direction: column;
+        align-items: center;
     }
+}
+</style>
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      padding: 12px 25px;
-      background: #fff;
-      color: #0d6efd;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #ddd;
-    }
-
-    /* Features */
-    .features {
-      padding: 60px 10%;
-      text-align: center;
-    }
-
-    .features h2 {
-      margin-bottom: 40px;
-      font-size: 32px;
-    }
-
-    .feature-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .feature {
-      flex: 1 1 250px;
-      padding: 20px;
-      border-radius: 10px;
-      background: #f4f4f4;
-      transition: 0.3s;
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-
-    /* CTA */
-    .cta {
-      background: #0d6efd;
-      color: white;
-      padding: 50px 10%;
-      text-align: center;
-    }
-
-    .cta h2 {
-      margin-bottom: 20px;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #aaa;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <h1>MyBrand</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Features</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+<!-- Navbar -->
+<nav>
+    <h1>CoffeeHouse</h1>
+    <ul>
+        <li>Home</li>
+        <li>Menu</li>
+        <li>Contact</li>
+    </ul>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div>
-      <h2>Build Your Dream Website</h2>
-      <p>Simple, fast, and responsive landing page design</p>
-      <button class="btn">Get Started</button>
+<!-- Hero -->
+<section class="heading">
+    <div class="text">
+        <h2>Fresh Coffee Everyday ☕</h2>
+        <p>Start your day with the best coffee in town. Rich aroma, perfect taste.</p>
+        <button>Order Now</button>
     </div>
-  </section>
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="coffee">
+</section>
 
-  <!-- Features -->
-  <section class="features">
-    <h2>Our Features</h2>
-    <div class="feature-grid">
-      <div class="feature">
-        <h3>Fast</h3>
-        <p>Optimized for performance and speed.</p>
-      </div>
-      <div class="feature">
-        <h3>Responsive</h3>
-        <p>Looks great on all devices.</p>
-      </div>
-      <div class="feature">
-        <h3>Easy</h3>
-        <p>Simple and clean design for quick setup.</p>
-      </div>
+<!-- menu -->
+<section class="menu">
+    <h2>Our Specials</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Espresso</h3>
+            <p>Strong and bold taste.</p>
+        </div>
+        <div class="card">
+            <h3>Latte</h3>
+            <p>Smooth and creamy coffee.</p>
+        </div>
+        <div class="card">
+            <h3>Cappuccino</h3>
+            <p>Perfect balance of milk and coffee.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Ready to Start?</h2>
-    <button class="btn">Sign Up Now</button>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 MyBrand. All rights reserved.</p>
-  </footer>
+<!-- Footer -->
+<footer>
+    <p>© 2026 CoffeeHouse | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
